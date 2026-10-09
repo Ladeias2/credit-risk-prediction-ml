@@ -1,4 +1,4 @@
-<img width="1701" height="2268" alt="image" src="https://github.com/user-attachments/assets/53e71a17-d90a-4ffe-8c40-fd6ce4482a5d" /># Credit Risk Prediction ML
+# Credit Risk Prediction ML
 
 Desenvolvido por:
 - Ana Carolina Sampaio dos Santos
