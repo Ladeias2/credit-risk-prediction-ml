@@ -1,4 +1,4 @@
-# Credit Risk Prediction ML
+<img width="1701" height="2268" alt="image" src="https://github.com/user-attachments/assets/53e71a17-d90a-4ffe-8c40-fd6ce4482a5d" /># Credit Risk Prediction ML
 
 Desenvolvido por:
 - Ana Carolina Sampaio dos Santos
@@ -398,6 +398,60 @@ Abrir:
 ```text
 http://localhost:5000
 ```
+
+# Resultados Obtidos
+
+## Comparação dos Modelos
+
+Os modelos foram comparados utilizando validação cruzada de 5 folds e a métrica ROC AUC.
+
+| Modelo | ROC AUC Média | Desvio Padrão |
+|----------|----------:|----------:|
+| Regressão Logística | 0,7781 | 0,0224 |
+| Gradient Boosting | 0,7474 | 0,0261 |
+| Random Forest | 0,7418 | 0,0230 |
+
+A Regressão Logística apresentou o melhor desempenho e foi selecionada para avaliação final.
+
+---
+
+## Avaliação no Conjunto de Teste
+
+| Métrica | Valor |
+|----------|----------:|
+| Acurácia | 0,8058 |
+| Precisão | 0,5888 |
+| Recall | 0,2500 |
+| F1 Score | 0,3510 |
+| ROC AUC | 0,7625 |
+
+Os resultados demonstram boa capacidade de separação entre clientes adimplentes e inadimplentes, embora ainda existam oportunidades de melhoria na identificação dos casos positivos, refletidas pelo recall mais baixo.
+
+---
+
+## Análise de Limiar
+
+Para a definição do limiar de decisão foram utilizadas probabilidades obtidas através de validação cruzada no conjunto de treinamento, sem utilizar o conjunto de teste.
+
+Custos considerados:
+
+- Falso Positivo (FP): R$ 1.500
+- Falso Negativo (FN): R$ 8.000
+
+Após selecionar o limiar de menor custo e avaliá-lo no conjunto de teste, foram obtidos:
+
+- Falsos Positivos (FP): 314
+- Falsos Negativos (FN): 78
+
+Custo total estimado:
+
+```text
+R$ 1.095.000,00
+```
+
+# Conclusão
+
+O projeto demonstrou todas as etapas fundamentais de um fluxo de Machine Learning aplicado a problemas de crédito: análise exploratória, preparação dos dados, treinamento, validação, avaliação, escolha de limiar de decisão e implantação em uma aplicação web. A Regressão Logística apresentou o melhor desempenho entre os modelos avaliados, alcançando ROC AUC superior a 0,76 no conjunto de teste. Além dos aspectos técnicos, foram considerados fatores de negócio, custos associados aos erros de classificação e questões éticas relacionadas ao uso de sistemas automatizados para concessão de crédito.
 
 ---
 
